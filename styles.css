@@ -1,0 +1,92 @@
+:root{
+    --dark-purple: rgb(95, 0, 95);
+    --light-purple: rgb(153, 0, 153);
+    --purple-gradient: linear-gradient(153deg, rgba(2,0,36,1) 0%, rgba(92,0,75,1) 0%, rgba(255,39,201,1) 100%);
+}
+body{
+    position: relative;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+header{
+    height: 8vh;
+    width: 100vw;
+    background: var(--purple-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0px 5px 5px var(--dark-purple);
+
+}
+header h4,
+#game-end-screen,
+header a{
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+/*grid*/
+#grid{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    margin-top: 1.2rem;
+    height: 500px;
+}
+/*game end screen*/
+#game-end-screen{
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(128, 128, 128, 0.555);
+    display: grid;
+    place-items: center;
+
+}
+#message{
+    background-color: white;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    color: var(--dark-purple);
+}
+button{
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+}
+
+#res-btn{
+    background-color: var(--dark-purple);
+    color: white;
+    font-weight: bold;
+}
+/**/
+.tile{
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 1px white solid;
+    background-color: var(--dark-purple);
+    width: 50px;
+    height: 50px;
+    transition: all .2s linear;
+}
+.tile:hover{
+    border: 2.5px white solid;
+    background-color: var(--light-purple);
+    transform:scale(1.1);
+}
+
+/* media queries */
+@media only screen and (max-width: 700px) {
+    #grid{
+        width: 300px;
+        height: 400px;
+    }
+}
